@@ -1,0 +1,76 @@
+<div class="row " style="padding-top: 15px;">
+  <div class="col-xl-12">
+    <div class="card bg-light">
+
+      <div class="card-body">
+        <div class="col-md-5 float-right">
+          
+        <a href="/group/student" class="btn btn-warning float-right"
+          style="margin-right: 5px; padding: 7px 20px; font-size: 17px; color: #fff;">
+          Talaba qo'shish</a>
+        <a href="/group/add" class="btn btn-success float-right"
+          style="margin-right: 5px; padding: 7px 20px; font-size: 17px; color: #fff;">
+          Guruh yaratish</a>
+        </div>
+       
+
+        <h4 class="mt-0 mb-4" style="font-size: 25px;">Barcha guruhlar ro'yhati</h4>
+        <div class="table-responsive">
+          <table class="table table-hover">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col" style="font-size: 15px;">Guruh nomi</th>
+                <th scope="col" style="font-size: 15px;">Fanning nomi</th>
+                <th scope="col" style="font-size: 15px;">O'qituvchi</th>
+                <th scope="col" style="font-size: 15px;"></th>
+
+
+              </tr>
+            </thead>
+            <tbody>
+              <% for (let item of group) { %>
+                <tr>
+                  <td>
+                    <span style="font-size: 15px; color: #000;">
+                      <%= item.name %>
+                    </span>
+                  </td>
+                  <td>
+                    <span style="font-size: 15px; color: #000;">
+                      <%= item.subjectID.subject %>
+                    </span>
+                  </td>
+                  <td>
+                    <span style="font-size: 15px; color: #000; ">
+                      <%= item.teacherID.name %>
+                    </span>
+                  </td>
+                  
+                  <td>
+                    <div>
+                      <form method="POST" action="<%=`${item._id}?_method=DELETE`%>">
+                        <button type="submit" class="btn btn-danger btn-sm float-right ml-3">
+                          <span style="font-size: 20px; padding: 5px;" class="mdi mdi-delete">
+                          </span>
+                          </a>
+                        </button>
+                      </form>
+
+                      <a href="<%=`/api/group/${item._id}`%>" class=" float-right btn btn-primary btn-sm">
+                        <span style="font-size: 20px; padding: 5px;" class="mdi mdi-information"></span></a>
+                    </div>
+                  </td>
+                  
+
+
+                </tr>
+                <% } %>
+            </tbody>
+          </table>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

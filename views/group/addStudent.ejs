@@ -1,0 +1,54 @@
+<div class="content">
+    <div class="container-fluid">
+        <div class="page-title-box">
+            <div class="row align-items-center">
+                <div class="col-sm-6">
+                    <h4>Yangi foydalanubchi qo'shish</h4>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+
+                        <form method="POST" action="/api/addStudentGroup/add">
+
+                            <div class="form-group row">
+
+                                <label style="font-size: 15px;" for="example-text-input"
+                                    class="mt-3 col-sm-12 col-form-label">Guruh nomi</label>
+
+                                <select class="custom-select  col-sm-5 ml-3 pr-3" name="groupID">
+                                    <% for (const group of groupID) {%>
+                                        <option value="<%= group._id  %>">
+                                            <%= group.name %>
+                                        </option>
+                                        <%}%>
+                                </select>
+
+
+                                <label style="font-size: 15px;" for="example-text-input"
+                                    class="mt-3 col-sm-12 col-form-label">Talabalar ismi</label>
+
+                                <select class="custom-select  col-sm-5 ml-3 pr-3" name="userID">
+                                    <% for (const user of userID) {%>
+                                        <option value="<%= user._id  %>">
+                                            <%= user.name %>
+                                        </option>
+                                        <%}%>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn btn-success btn-sm float-right ml-3"
+                                style="font-size: 15px; padding: 5px 15px;" id="alertify-success-callback" >Saqlash</button>
+                        </form>
+                        <a href="/api/group/all" class="btn btn-danger btn-sm float-right ml-3"
+                            style="font-size: 15px; padding: 5px 15px;">Orqaga</a>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

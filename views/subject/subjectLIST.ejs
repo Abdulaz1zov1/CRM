@@ -1,0 +1,46 @@
+<div class="row " style="padding-top: 15px;">
+  <div class="col-xl-12">
+    <div class="card bg-light">
+
+      <div class="card-body">
+        <a href="/subject" class="btn btn-danger btn-sm float-right" style="margin-right: 50px; padding: 7px 20px; font-size: 15px; color: #fff;">Back</a>
+
+        <h4 class="mt-0 mb-4" style="font-size: 22px;" >All Subjects Lists</h4>
+        <div class="table-responsive">
+          <table class="table table-hover">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col" style="padding-left:50px; font-size: 15px;">Subject name</th>
+                
+                
+                <th scope="col"   style="padding-right: 100px;font-size: 15px;">Setting </th>
+
+              </tr>
+            </thead>
+            <tbody>
+              <% for (let item of subject) { %>
+                <tr>
+                  <td>
+                    <span style="font-size: 15px; color: #000;">
+                      <%= item.subject %>
+                    </span> 
+                  </td>
+                  <td>
+                    <div>
+                        <a href="<%=`/api/subject/${item._id}`%>" style="margin-right: 50px; padding: 7px 20px; font-size: 15px; color: #fff;" class=" float-right btn btn-primary btn-sm" style="padding: 7px 15px; font-size: 13px; color: #fff;">Edit</a>
+                    </div>
+                  </td>
+                </tr>
+              <% } %>
+            </tbody>
+          </table>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+

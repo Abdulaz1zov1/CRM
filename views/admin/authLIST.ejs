@@ -1,0 +1,59 @@
+<div class="row" style="padding-top: 15px;">
+  <div class="col-xl-12">
+    <div class="card ">
+      <div class="card-body">
+        <a href="/dashboard" class="btn btn-danger btn-sm float-right" style="padding: 7px 15px; font-size: 15px; color: #fff;">Dashboardga qaytish</a>
+
+        <h4 class="mt-0 mb-4" style="font-size: 22px;">Admin haqida malumot</h4>
+        <div class="table-responsive">
+          <table class="table table-hover">
+            <thead class="thead-dark">
+              <tr>
+                <th style="font-size: 15px;" scope="col">Rasm</th>
+                <th style="font-size: 15px;" scope="col">Foydalanuvchining ismi</th>
+                <th style="font-size: 15px;" scope="col">Roli</th>
+                <th style="font-size: 15px;" scope="col">Foydalanuvchining pochtasi</th>
+                
+                <th style="font-size: 15px;" scope="col" colspan="2">Sozlamalar </th>
+
+              </tr>
+            </thead>
+            <tbody>
+              <% for (let item of auth) { %>
+                <tr>
+                  <td>
+                    <div>
+                      <img style="border-radius: 50%; width: 50px; height: 50px;" src="../public/uploads/admin/<%= item.photo %>" name="photo" alt="rasm">
+                    </div>
+                  </td>
+                  <td>
+                    <span style="font-size: 15px; color: #000;">
+                      <%= item.name %>
+                    </span>
+                  </td>
+                  <td><span class="badge badge-success" style="padding: 10px 20px; font-size: 13px; color: #fff;">
+                      <%= item.role %>
+                    </span></td>
+                  <td>
+                    <span style="font-size: 15px; color: #000;">
+                      <%= item.email %>
+                    </span> 
+                  </td>
+                  <td>
+                    <div>
+                        <a href="<%=`/api/auth/${item._id}`%>" class="btn btn-primary btn-sm" style="padding: 7px 15px; font-size: 13px; color: #fff;">Tahrirlash</a>
+                    </div>
+                  </td>
+                </tr>
+              <% } %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+

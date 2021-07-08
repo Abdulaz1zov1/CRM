@@ -1,0 +1,36 @@
+<div class="content">
+ <div class="container-fluid">
+  <div class="page-title-box">
+   <div class="row align-items-center">
+    <div class="col-sm-6">
+     <h4>Edit or Delete subject</h4>
+    </div>
+   </div>
+  </div>
+  <div class="row">
+   <div class="col-12">
+    <div class="card">
+     <div class="card-body">
+      <form method="POST" action="<%=`${subject._id}?_method=PUT`%>">
+       <div class="form-group row">
+        <label for="example-text-input" style="font-size: 15px;" class="col-sm-2 col-form-label">Subject name</label>
+        <br>
+        <input class="form-control mr-4 ml-3" name="subject" value="<%= subject.subject %>">
+       </div>
+       <div>
+        <a href="/api/subject/all" class="btn btn-dark btn-sm float-right ml-3"
+         style="font-size: 15px; padding: 5px 15px;">Back</a>
+        <button type="submit" class="btn btn-success btn-sm float-right ml-3"
+         style="font-size: 15px; padding: 5px 15px;">Save</a>
+       </div>
+      </form>
+      <form method="POST" action="<%=`${subject._id}?_method=DELETE`%>">
+       <button type="submit" class="btn btn-danger btn-sm float-right ml-3"
+        style="font-size: 15px; padding: 5px 15px;">Delete</button>
+      </form>
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>

@@ -1,0 +1,79 @@
+<div class="content">
+    <div class="container-fluid">
+        <div class="page-title-box">
+            <div class="row align-items-center">
+                <div class="col-sm-6">
+                    <h2 class="mt-0 ">Guruh haqida malumot</h2>
+                </div>
+                
+            </div>
+            
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h5>Guruh nomi: " <%= group.name %>"</h5>
+                        <h5>O'qituvchi: " <%= group.teacherID.name %> "</h5>
+                        <h5>Fanning nomi: " <%= group.subjectID.subject %> " </h5>
+                        <table class="table table-hover mt-5">
+                            <thead class="thead-dark ">
+                                <tr>
+
+                                    <th scope="col" style="padding-left:50px; font-size: 20px;">F.I.O</th>
+                                    <th scope="col" style="padding-left:50px; font-size: 20px;">Sana</th>
+                                    <th scope="col" style="padding-left:50px; font-size: 20px;">Rating</th>
+                                    <th scope="col" style="padding-right: 100px;font-size: 20px;"></th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% for(const student of students) { %>
+                                    <tr>
+
+
+                                        <td>
+                                            <span style="padding-left:40px; font-size: 17px; color: #000;">
+                                                <%= student.userID.name %>
+                                            </span>
+                                        </td>
+
+                                        <td>
+                                            <span style="padding-left:40px; font-size: 17px; color: #000;">
+                                                <%= student.userID.data %>
+                                            </span>
+                                        </td>
+
+                                        <td>
+                                            <span style="padding-left:40px; font-size: 17px; color: #000;">
+                                                <%= student.userID.rating %>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <form method="POST" action="<%=`${student._id}?_method=DELETE`%>">
+                                                <button type="submit" class="btn btn-danger btn-sm float-right ml-3"
+                                                    style="font-size: 15px; padding: 5px 15px;">
+                                                    <i class="mdi mdi-delete" style="font-size: 17px;"></i>
+                                                </button>
+                                            </form>
+                                        </td>
+                                        
+                                        
+
+
+
+                                    </tr>
+                                    <% } %>
+                            </tbody>
+
+                        </table>
+                        
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
